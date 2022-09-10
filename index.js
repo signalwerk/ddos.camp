@@ -20,7 +20,18 @@ $('link[type="application/x-wiki"]').remove();
 $('link[type="application/rsd+xml"]').remove();
 $('link[type="application/atom+xml"]').remove();
 $('link[rel="edit"]').remove();
-$('.mw-usertoollinks').remove();
+$(".mw-usertoollinks").remove();
+
+$('script[src^="load.php"]').remove();
+
+$('link[rel="stylesheet"][href^="http://ddos.odenwilusenz.ch/"]').each(
+  function () {
+    const orig = $(this).attr("href");
+    console.log(`PARSE ${orig}`);
+
+    $(this).attr("href", orig.replace("http://ddos.odenwilusenz.ch/", "").replace("?", "%3F").replace("skin=vector", "skin=vector.css"));
+  }
+);
 
 $("a.new").each(function () {
   $(this).replaceWith($(this).text());
