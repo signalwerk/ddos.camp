@@ -1,4 +1,5 @@
 rm -rf docs
+rm -rf orig
 wget \
      --recursive \
      --force-directories \
@@ -13,32 +14,28 @@ wget \
          "http://ddos.odenwilusenz.ch/"
 
 mv ddos.odenwilusenz.ch docs
-cp public/CNAME docs
-cp public/.nojekyll docs
+cp -r public/{.,}* docs
 
 gsed -i 's/"wgRequestId":"[^"]*"/"wgRequestId":""/g' docs/*(.html|.orig)
 gsed -i 's/"wgBackendResponseTime":[0-9]*/"wgBackendResponseTime":0/g' docs/*(.html|.orig)
-
-
-
-
 
 for file in ./docs/*.html
 do
   node index.js "$file"
 done
 
+# fix php title
+gsed -i 's/index\.php.3Ftitle=//g' docs/*.html
+rename 's/index\.php\?title=//;' docs/*.html
 
 ## fix svg
 gsed -i 's/\.svg.3F...../.svg/g' "./docs/load.php?lang=de&modules=skins.vector.styles.legacy&only=styles&skin=vector.css"
 gsed -i 's/\.svg?...../.svg/g' "./docs/load.php?lang=de&modules=skins.vector.styles.legacy&only=styles&skin=vectororig"
 
 
-
 rename 's/\.svg\?.*/.svg/;' docs/**/*svg* 
-
-
-
+mkdir ./orig/
+mv ./docs/*.orig ./orig/
 
 
 prettier --write docs/*.html

@@ -2,7 +2,7 @@
 <html class="client-nojs" lang="de" dir="ltr">
   <head>
     <meta charset="UTF-8" />
-    <title>Benutzer:Soraxem – DDOS-Wiki</title>
+    <title>Pröbeln statt rechnen – DDOS-Wiki</title>
     <script>
       document.documentElement.className = "client-js";
       RLCONF = {
@@ -27,14 +27,14 @@
         ],
         wgRequestId: "",
         wgCSPNonce: !1,
-        wgCanonicalNamespace: "User",
+        wgCanonicalNamespace: "",
         wgCanonicalSpecialPageName: !1,
-        wgNamespaceNumber: 2,
-        wgPageName: "Benutzer:Soraxem",
-        wgTitle: "Soraxem",
-        wgCurRevisionId: 80,
-        wgRevisionId: 80,
-        wgArticleId: 9,
+        wgNamespaceNumber: 0,
+        wgPageName: "Pröbeln_statt_rechnen",
+        wgTitle: "Pröbeln statt rechnen",
+        wgCurRevisionId: 165,
+        wgRevisionId: 165,
+        wgArticleId: 15,
         wgIsArticle: !0,
         wgIsRedirect: !1,
         wgAction: "view",
@@ -43,13 +43,12 @@
         wgCategories: [],
         wgPageContentLanguage: "de",
         wgPageContentModel: "wikitext",
-        wgRelevantPageName: "Benutzer:Soraxem",
-        wgRelevantArticleId: 9,
+        wgRelevantPageName: "Pröbeln_statt_rechnen",
+        wgRelevantArticleId: 15,
         wgIsProbablyEditable: !0,
         wgRelevantPageIsProbablyEditable: !0,
         wgRestrictionEdit: [],
         wgRestrictionMove: [],
-        wgRelevantUserName: "Soraxem",
       };
       RLSTATE = {
         "site.styles": "ready",
@@ -100,7 +99,7 @@
     />
   </head>
   <body
-    class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-2 ns-subject mw-editable page-Benutzer_Soraxem rootpage-Benutzer_Soraxem skin-vector action-view skin-vector-legacy"
+    class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject mw-editable page-Pröbeln_statt_rechnen rootpage-Pröbeln_statt_rechnen skin-vector action-view skin-vector-legacy"
   >
     <div id="mw-page-base" class="noprint"></div>
     <div id="mw-head-base" class="noprint"></div>
@@ -108,21 +107,17 @@
       <a id="top"></a>
       <div id="siteNotice"></div>
       <div class="mw-indicators"></div>
-      <h1 id="firstHeading" class="firstHeading">Benutzer:Soraxem</h1>
+      <h1 id="firstHeading" class="firstHeading">Pröbeln statt rechnen</h1>
       <div id="bodyContent" class="vector-body">
         <div id="siteSub" class="noprint">Aus DDOS-Wiki</div>
         <div id="contentSub"></div>
         <div id="contentSub2"></div>
 
         <div id="jump-to-nav"></div>
-        <a
-          class="mw-jump-link"
-          href="./index.php%3Ftitle=Benutzer:Soraxem.html#mw-head"
+        <a class="mw-jump-link" href="Pröbeln_statt_rechnen.html#mw-head"
           >Zur Navigation springen</a
         >
-        <a
-          class="mw-jump-link"
-          href="./index.php%3Ftitle=Benutzer:Soraxem.html#searchInput"
+        <a class="mw-jump-link" href="Pröbeln_statt_rechnen.html#searchInput"
           >Zur Suche springen</a
         >
         <div
@@ -132,63 +127,102 @@
           dir="ltr"
         >
           <div class="mw-parser-output">
-            <div class="floatright">
-              <a
-                href="./index.php%3Ftitle=Datei:Nyan-cad-2.gif.html"
-                class="image"
-                ><img
-                  alt="Nyan-cad-2.gif"
-                  src="images/thumb/9/9a/Nyan-cad-2.gif/300px-Nyan-cad-2.gif"
-                  decoding="async"
-                  width="300"
-                  height="533"
-                  srcset="images/9/9a/Nyan-cad-2.gif 1.5x"
-              /></a>
-            </div>
-            <p>Lolololo</p>
             <p>
-              <a rel="nofollow" class="external text" href="https://Soraxem.ch"
-                >Soraxem.ch</a
+              LTspice ist ein Schaltungssimulator. Graphische Bedienung mit low
+              code. Läuft problemlos auf Linux-Rechnern unter Wine.
+            </p>
+            <p>
+              Wer LTspice noch nicht installiert hat oder nicht weiss, was ein
+              Operationsverstärker ist, bitte zur Vorbereitung kommen um 15:45.
+            </p>
+            <p>
+              Ziel des Workshops ist, eine Verstärkerschaltung zu optimieren.
+              Dazu gibt es ein paar Tips und Tricks in der Bedienung, die ich
+              euch zeigen möchte. Mal ganz abgesehen davon, dass die
+              Verstärkerschaltung selbst auch interessant ist.
+            </p>
+            <p><br /></p>
+            <hr />
+            <pre>
+*.ac oct 20 1 1G
+.tran 14u
+ 
+.param R_FB 1k
+*.step param R_FB  list 470 1k 4k7 10k
+.param R_Gain R_FB/9
+ 
+.param L_Gain 10u
+*.step param L_Gain list 1n 10n 100n 1u 10u 100u
+ 
+.param L_LP 1u8 
+*.step param L_LP list 1u 2u2 4u7
+ 
+.param C_LP 1n
+*.step param C_LP list 1n 10n 100n 1u
+ 
+.param R_Damp_L 4.7 
+*.step param R_Damp_L list 1 4.7 10
+ 
+.param R_Damp_C 1
+ 
+*.param R_L 16
+.step param R_L list 8 32 1G
+.param C_L 320n/R_L
+</pre
+            >
+            <hr />
+            <p>
+              Hier die Schaltung:
+              <a
+                href="./Datei:LTspice_ddos.png.html"
+                title="Datei:LTspice ddos.png"
+                >Datei:LTspice_ddos.png</a
               >
             </p>
             <p>
+              <br />
+              Und noch ein paar Tips zum schnelleren Zeichnen des Schemas:
               <a
                 rel="nofollow"
-                class="external text"
-                href="http://c.tenor.com/zBc1XhcbTSoAAAAC/nyan-cat-rainbow.gif"
-                >Nyan Cat</a
+                class="external free"
+                href="https://www.analog.com/en/technical-articles/ltspice-keyboard-shortcuts.html"
+                >https://www.analog.com/en/technical-articles/ltspice-keyboard-shortcuts.html</a
               >
             </p>
             <p>
+              Auf Seite 12 des data sheets des AD844 befindet sich eine
+              Erklärung des Unterschieds zwischen
+              <strong>voltage feedback</strong> und
+              <strong>current feedback</strong> Operationsverstärkern.
               <a
                 rel="nofollow"
-                class="external text"
-                href="https://tenor.com/view/rick-astley-never-gonna-give-you-up-cry-for-help-pwl-stock-aitken-waterman-gif-17671973"
-                >Nyan Cat 2</a
+                class="external free"
+                href="https://www.analog.com/en/products/ad844.html#product-overview"
+                >https://www.analog.com/en/products/ad844.html#product-overview</a
               >
             </p>
             <!-- 
 NewPP limit report
-Cached time: 20220910144410
+Cached time: 20220910173236
 Cache expiry: 86400
 Reduced expiry: false
 Complications: []
-CPU time usage: 0.008 seconds
-Real time usage: 0.050 seconds
-Preprocessor visited node count: 1/1000000
+CPU time usage: 0.004 seconds
+Real time usage: 0.005 seconds
+Preprocessor visited node count: 4/1000000
 Post‐expand include size: 0/2097152 bytes
 Template argument size: 0/2097152 bytes
-Highest expansion depth: 1/40
+Highest expansion depth: 2/40
 Expensive parser function count: 0/100
 Unstrip recursion depth: 0/20
-Unstrip post‐expand size: 0/5000000 bytes
+Unstrip post‐expand size: 438/5000000 bytes
 -->
             <!--
 Transclusion expansion time report (%,ms,calls,template)
 100.00%    0.000      1 -total
 -->
 
-            <!-- Saved in parser cache with key zetecoco_mwi0-mw_:pcache:idhash:9-0!canonical and timestamp 20220910144410 and revision id 80. Serialized with JSON.
+            <!-- Saved in parser cache with key zetecoco_mwi0-mw_:pcache:idhash:15-0!canonical and timestamp 20220910173236 and revision id 165. Serialized with JSON.
  -->
           </div>
         </div>
@@ -281,7 +315,8 @@ Transclusion expansion time report (%,ms,calls,template)
     <footer id="footer" class="mw-footer" role="contentinfo">
       <ul id="footer-info">
         <li id="footer-info-lastmod">
-          Diese Seite wurde zuletzt am 8. August 2022 um 11:38 Uhr bearbeitet.
+          Diese Seite wurde zuletzt am 10. September 2022 um 19:32 Uhr
+          bearbeitet.
         </li>
       </ul>
     </footer>
@@ -291,19 +326,19 @@ Transclusion expansion time report (%,ms,calls,template)
         mw.config.set({
           wgPageParseReport: {
             limitreport: {
-              cputime: "0.008",
-              walltime: "0.050",
-              ppvisitednodes: { value: 1, limit: 1000000 },
+              cputime: "0.004",
+              walltime: "0.005",
+              ppvisitednodes: { value: 4, limit: 1000000 },
               postexpandincludesize: { value: 0, limit: 2097152 },
               templateargumentsize: { value: 0, limit: 2097152 },
-              expansiondepth: { value: 1, limit: 40 },
+              expansiondepth: { value: 2, limit: 40 },
               expensivefunctioncount: { value: 0, limit: 100 },
               "unstrip-depth": { value: 0, limit: 20 },
-              "unstrip-size": { value: 0, limit: 5000000 },
+              "unstrip-size": { value: 438, limit: 5000000 },
               timingprofile: ["100.00%    0.000      1 -total"],
             },
             cachereport: {
-              timestamp: "20220910144410",
+              timestamp: "20220910173236",
               ttl: 86400,
               transientcontent: false,
             },
